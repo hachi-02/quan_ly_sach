@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFFFF"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/bt_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FF654895"
+                android:paddingHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:onClick="onButtonClick">
+                <ImageView
+                    android:id="@+id/r4jhvvwubvas"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/account_circle"
+                    android:scaleType="fitXY"
+                    />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rcv"/>
+
+
+        </LinearLayout>
+
+</LinearLayout>
