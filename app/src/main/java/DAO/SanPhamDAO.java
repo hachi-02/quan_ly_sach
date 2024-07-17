@@ -17,7 +17,7 @@ public class SanPhamDAO {
         SQLiteDatabase db=helper.getWritableDatabase();
         ContentValues value=new ContentValues();
         value.put("tentp",sp.tentp);
-        value.put("tentg",sp.tentg);
+        value.put("theloai",sp.theloai);
         value.put("soluong",sp.soluong);
         value.put("dongia",sp.dongia);
 

@@ -41,7 +41,7 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamViewholder> {
         //gắn vị  trí index
         holder.tv_id.setText(sp.masp+"");
         holder.tv_tentp.setText(sp.tentp);
-        holder.tv_tentg.setText(sp.tentg);
+        holder.tv_theloai.setText(sp.theloai);
         holder.tv_soluong.setText(sp.soluong+"");
         holder.tv_dongia.setText(sp.dongia+"");
 

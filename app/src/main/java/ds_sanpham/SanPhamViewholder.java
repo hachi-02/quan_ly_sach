@@ -16,14 +16,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.duanmau.R;
 
 public class SanPhamViewholder extends RecyclerView.ViewHolder {
-    TextView tv_id,tv_tentp,tv_tentg,tv_soluong,tv_dongia;
+    TextView tv_id,tv_tentp,tv_theloai,tv_soluong,tv_dongia;
     LinearLayout bt_sua,bt_xoa;
 
     public SanPhamViewholder(@NonNull View itemView) {
         super(itemView);
         this.tv_id=itemView.findViewById(R.id.tv_masp);
         this.tv_tentp=itemView.findViewById(R.id.tv_tentp);
-        this.tv_tentg=itemView.findViewById(R.id.tv_tentg);
+        this.tv_theloai=itemView.findViewById(R.id.tv_theloai);
         this.tv_soluong=itemView.findViewById(R.id.tv_soluong);
         this.tv_dongia=itemView.findViewById(R.id.tv_dongia);
 

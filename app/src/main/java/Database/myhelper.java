@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 public class myhelper extends SQLiteOpenHelper {
 
     public myhelper(@Nullable Context context){
-        super(context,"Quan_Ly_Sach", null, 2);
+        super(context,"Quan_Ly_Sach", null, 3);
     }
 
     @Override
@@ -28,7 +28,7 @@ public class myhelper extends SQLiteOpenHelper {
                 "( " +
                 "masp integer primary key autoincrement, " +
                 "tentp text, " +
-                "tentg text, "+
+                "theloai text, "+
                 "soluong integer," +
                 "dongia integer " +
                 ")";

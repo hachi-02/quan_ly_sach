@@ -5,7 +5,7 @@
     android:background="#FFFFFFFF"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="201dp">
 
 
 
@@ -41,14 +41,16 @@
                             android:layout_height="wrap_content"
                             android:text="Mã SP: "
                             android:textColor="#000000"
-                            android:textSize="22sp" />
+                            android:textSize="22sp"
+                            android:visibility="gone"/>
 
                         <TextView
                             android:id="@+id/tv_masp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="helo"
-                            android:textSize="22sp" />
+                            android:textSize="22sp"
+                            android:visibility="gone"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -79,12 +81,12 @@
                             android:id="@+id/tv3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Tác giả: "
+                            android:text="Thể loại: "
                             android:textColor="#000000"
                             android:textSize="22sp" />
 
                         <TextView
-                            android:id="@+id/tv_tentg"
+                            android:id="@+id/tv_theloai"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="helo"
