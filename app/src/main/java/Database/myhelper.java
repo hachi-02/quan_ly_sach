@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 public class myhelper extends SQLiteOpenHelper {
 
     public myhelper(@Nullable Context context){
-        super(context,"Quan_Ly_Sach", null, 3);
+        super(context,"Quan_Ly_Sach", null, 2);
     }
 
     @Override
@@ -33,6 +33,12 @@ public class myhelper extends SQLiteOpenHelper {
                 "dongia integer " +
                 ")";
         db.execSQL(sql);
+
+        //init dữ liệu mẫu cho bảng sanpham
+        String insert = "insert into sanpham values " +
+                "(0, 'truyện gì đó', 'truyện', 10, 10000)," +
+                "(1, 'truyện gì đó 01', 'truyện', 10, 10000);";
+        db.execSQL(insert);
     }
 
     @Override

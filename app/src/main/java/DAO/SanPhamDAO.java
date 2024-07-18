@@ -16,10 +16,10 @@ public class SanPhamDAO {
     public void themSanPham(SanPham sp){
         SQLiteDatabase db=helper.getWritableDatabase();
         ContentValues value=new ContentValues();
-        value.put("tentp",sp.tentp);
-        value.put("theloai",sp.theloai);
-        value.put("soluong",sp.soluong);
-        value.put("dongia",sp.dongia);
+        value.put("tentp",sp.getTentp());
+        value.put("theloai",sp.getTheloai());
+        value.put("soluong",sp.getSoluong());
+        value.put("dongia",sp.getDongia());
 
         db.insert("sanpham",null,value);
     }
@@ -48,5 +48,16 @@ public class SanPhamDAO {
     public void xoaSanPham(int masp){
         SQLiteDatabase db=helper.getReadableDatabase();
         db.delete("sanpham","masp=?",new String[]{masp+""});
+    }
+
+    //sửa sản phẩm
+    public void suaSanPham(SanPham sp){
+        SQLiteDatabase db=helper.getReadableDatabase();
+        ContentValues value=new ContentValues();
+        value.put("tentp",sp.getTentp());
+        value.put("theloai",sp.getTheloai());
+        value.put("soluong",sp.getSoluong());
+        value.put("dongia",sp.getDongia());
+        db.update("sanpham",value,"masp=?",new String[]{sp.getMasp()+""});
     }
 }

@@ -26,6 +26,18 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamViewholder> {
         this.ds = list;
     }
 
+    public void update(int position){
+        notifyItemChanged(position);
+    }
+
+    public void add(SanPham sp){
+        ds.add(sp);
+        notifyItemInserted(ds.size() - 1);
+    }
+    public void remove(int position){
+        ds.remove(position);
+        notifyItemRemoved(position);
+    }
 
     @NonNull
     @Override
@@ -35,27 +47,28 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamViewholder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SanPhamViewholder holder, @SuppressLint("RecyclerView") int position) {
-        SanPham sp = ds.get(position);
+    public void onBindViewHolder(@NonNull SanPhamViewholder holder, int position) {
+        SanPham sp = ds.get(holder.getAdapterPosition());
         //gắn vị  trí index
-        holder.tv_id.setText(sp.masp + "");
-        holder.tv_tentp.setText(sp.tentp);
-        holder.tv_theloai.setText(sp.theloai);
-        holder.tv_soluong.setText(sp.soluong + "");
-        holder.tv_dongia.setText(sp.dongia + "");
+        holder.tv_id.setText(sp.getMasp() + "");
+        holder.tv_tentp.setText(sp.getTentp());
+        holder.tv_theloai.setText(sp.getTheloai());
+        holder.tv_soluong.setText(sp.getSoluong() + "");
+        holder.tv_dongia.setText(sp.getDongia() + "");
 
         holder.bt_xoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int masp = ds.get(position).masp;
-                ((SanPhamActivity) context).xoaSanPham(masp);
+                int masp = ds.get(holder.getAdapterPosition()).getMasp();
+                ((SanPhamActivity) context).xoaSanPham(masp, holder.getAdapterPosition());
             }
         });
         holder.bt_sua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SanPham sp = ds.get(position);
-                ((SanPhamActivity) context).suaSanPham(sp);
+                SanPham sp = ds.get(holder.getAdapterPosition());
+                ((SanPhamActivity) context).suaSanPham(sp, holder.getAdapterPosition());
+                //recyclerview sử dụng holder.getAdapterPosition()) thay vì position
             }
         });
     }

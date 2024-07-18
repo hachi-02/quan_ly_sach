@@ -10,7 +10,7 @@
         android:layout_height="64dp"
         android:background="#FFC107"
         android:gravity="center"
-        android:text="Sua san pham"
+        android:text="them san pham"
         android:textSize="35dp"/>
 
     <EditText

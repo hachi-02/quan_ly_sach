@@ -1,8 +1,8 @@
 package Model;
 
 public class SanPham {
-    public int masp,soluong,dongia;
-    public String tentp,theloai;
+    private int masp,soluong,dongia;
+    private String tentp,theloai;
     public SanPham(int masp,String tentp, String theloai,int soluong, int dongia){
         this.masp=masp;
         this.tentp=tentp;
@@ -56,4 +56,14 @@ public class SanPham {
     public void setTheloai(String theloai) {
         this.theloai = theloai;
     }
+
+
+    public SanPham(int masp, int soluong, int dongia, String tentp, String theloai) {
+        this.masp = masp;
+        this.soluong = soluong;
+        this.dongia = dongia;
+        this.tentp = tentp;
+        this.theloai = theloai;
+    }
+
 }
