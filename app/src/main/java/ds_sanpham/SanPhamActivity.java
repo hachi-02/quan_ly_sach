@@ -1,9 +1,12 @@
 package ds_sanpham;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -47,7 +50,27 @@ public class SanPhamActivity extends AppCompatActivity {
         rcv.setAdapter(adapter);
     }
     public void xoaSanPham(int masp){
-        sp.xoaSanPham(masp);
-        dulieu();
+        AlertDialog.Builder builder = new AlertDialog.Builder(SanPhamActivity.this);
+        builder.setTitle("thong bao");
+        builder.setMessage("Ban co muon xoa");
+        builder.setCancelable(false);
+
+        builder.setNegativeButton("no", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                sp.xoaSanPham(masp);
+                dulieu();
+                Toast.makeText(getApplicationContext(), "Xoa thanh cong", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AlertDialog dialog=builder.create();
+        dialog.show();
     }
 }
