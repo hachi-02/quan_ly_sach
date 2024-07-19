@@ -1,8 +1,9 @@
 package Model;
 
 public class SanPham {
-    public int masp,soluong,dongia;
-    public String tentp,theloai;
+     public int masp,soluong,dongia;
+     public String tentp;
+    public String theloai;
     public SanPham(int masp,String tentp, String theloai,int soluong, int dongia){
         this.masp=masp;
         this.tentp=tentp;
@@ -16,4 +17,6 @@ public class SanPham {
         this.soluong=soluong;
         this.dongia=dongia;
     }
+
+
 }

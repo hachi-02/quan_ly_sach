@@ -33,6 +33,12 @@ public class myhelper extends SQLiteOpenHelper {
                 "dongia integer " +
                 ")";
         db.execSQL(sql);
+
+        //init dữ liệu mẫu cho bảng sanpham
+        String insert = "insert into sanpham values " +
+                "(0, 'truyện gì đó', 'truyện', 10, 10000)," +
+                "(1, 'truyện gì đó 01', 'truyện', 10, 10000);";
+        db.execSQL(insert);
     }
 
     @Override

@@ -49,4 +49,15 @@ public class SanPhamDAO {
         SQLiteDatabase db=helper.getReadableDatabase();
         db.delete("sanpham","masp=?",new String[]{masp+""});
     }
+
+    //sửa sản phẩm
+    public void suaSanPham(SanPham sp){
+        SQLiteDatabase db=helper.getReadableDatabase();
+        ContentValues value=new ContentValues();
+        value.put("tentp",sp.tentp);
+        value.put("theloai",sp.theloai);
+        value.put("soluong",sp.soluong);
+        value.put("dongia",sp.dongia);
+        db.update("sanpham",value,"masp=?",new String[]{sp.masp+""});
+    }
 }
