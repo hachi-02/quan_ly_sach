@@ -34,10 +34,22 @@ public class myhelper extends SQLiteOpenHelper {
                 "FOREIGN KEY(theloai_id) REFERENCES theloai(id)" +
                 ")";
         db.execSQL(sql);
+        //thể loại
         String createTableTheLoai = "CREATE TABLE theloai (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "ten_theloai TEXT)";
         db.execSQL(createTableTheLoai);
+        //phiếu mượn
+        String phieuMuon = "create table phieumuon (" +
+                "id_phieumuon INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "tentp text, " +
+                "sdt text, " +
+                "tennguoimuon text, " +
+                "ngaymuon date, " +
+                "ngaytra date, " +
+                "masp int, " +
+                "FOREIGN KEY(masp) REFERENCES sanpham(masp))";
+        db.execSQL(phieuMuon);
 
         String insertTheLoaiData = "INSERT INTO theloai (ten_theloai) VALUES " +
                 "('Hài hước'), " +
@@ -58,6 +70,7 @@ public class myhelper extends SQLiteOpenHelper {
         db.execSQL("drop table if exists user");
         db.execSQL("drop table if exists sanpham");
         db.execSQL("DROP TABLE IF EXISTS theloai");
+        db.execSQL("drop table if exists phieumuon");
         onCreate(db);
     }
 }

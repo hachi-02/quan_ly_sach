@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.view.MenuItem;
@@ -16,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -56,7 +54,6 @@ public class SanPhamActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(null);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
-        ActionBar actionBar = getSupportActionBar();
 
         dulieu();
         fabutton.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +83,7 @@ public class SanPhamActivity extends AppCompatActivity {
     public void dialogthemSanPham() {
         AlertDialog.Builder builder = new AlertDialog.Builder(SanPhamActivity.this);
         LayoutInflater inf = getLayoutInflater();
-        View v = inf.inflate(R.layout.them, null);
+        View v = inf.inflate(R.layout.them_sp, null);
         Spinner spinner = v.findViewById(R.id.theloai);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.theloai_array, android.R.layout.simple_spinner_item);
@@ -150,7 +147,7 @@ public class SanPhamActivity extends AppCompatActivity {
     public void suaSanPham(SanPham sp){
         AlertDialog.Builder builder = new AlertDialog.Builder(SanPhamActivity.this);
         LayoutInflater inf= getLayoutInflater();
-        View v=inf.inflate(R.layout.sua,null);
+        View v=inf.inflate(R.layout.sua_sp,null);
         builder.setView(v);
         et_ten=v.findViewById(R.id.ten);
         Spinner spinner = v.findViewById(R.id.theloai);
