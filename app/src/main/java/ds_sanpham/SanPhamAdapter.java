@@ -20,13 +20,14 @@ import Model.SanPham;
 public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamViewholder> {
     ArrayList<SanPham> ds ;
     Context context;
+    private String[] theLoaiArray =new String[]{"0","Hài hước","Manga","Khoa học"};
 
     public SanPhamAdapter(Context context, ArrayList<SanPham> ds) {
         this.context = context;
         this.ds = ds;
     }
     public SanPhamViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(context).inflate(R.layout.item_san_pham_viewholder,parent,false); new SanPhamViewholder(v);
+        View v = LayoutInflater.from(context).inflate(R.layout.item_san_pham_viewholder, parent, false);
         return new SanPhamViewholder(v);
     }
 
@@ -36,9 +37,14 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamViewholder> {
         //gắn vị  trí index
         holder.tv_id.setText(sp.masp+"");
         holder.tv_tentp.setText(sp.tentp+"");
-        holder.tv_theloai.setText(sp.theloai+"");
+        if (sp.theloai >= 0 && sp.theloai < theLoaiArray.length) {
+            holder.tv_theloai.setText(theLoaiArray[sp.theloai]);
+        }
         holder.tv_soluong.setText(sp.soluong+"");
         holder.tv_dongia.setText(sp.dongia+"");
+
+
+
 
         holder.bt_xoa.setOnClickListener(new View.OnClickListener() {
             @Override

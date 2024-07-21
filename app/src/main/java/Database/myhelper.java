@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 public class myhelper extends SQLiteOpenHelper {
 
     public myhelper(@Nullable Context context){
-        super(context,"Quan_Ly_Sach", null, 3);
+        super(context,"Quan_Ly_Sach", null, 5);
     }
 
     @Override
@@ -28,17 +28,28 @@ public class myhelper extends SQLiteOpenHelper {
                 "( " +
                 "masp integer primary key autoincrement, " +
                 "tentp text, " +
-                "theloai text, "+
+                "theloai_id text, "+
                 "soluong integer," +
-                "dongia integer " +
+                "dongia integer, " +
+                "FOREIGN KEY(theloai_id) REFERENCES theloai(id)" +
                 ")";
         db.execSQL(sql);
+        String createTableTheLoai = "CREATE TABLE theloai (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "ten_theloai TEXT)";
+        db.execSQL(createTableTheLoai);
 
-        //init dữ liệu mẫu cho bảng sanpham
-        String insert = "insert into sanpham values " +
-                "(0, 'truyện gì đó', 'truyện', 10, 10000)," +
-                "(1, 'truyện gì đó 01', 'truyện', 10, 10000);";
-        db.execSQL(insert);
+        String insertTheLoaiData = "INSERT INTO theloai (ten_theloai) VALUES " +
+                "('Hài hước'), " +
+                "('Manga'), " +
+                "('Khoa học')";
+        db.execSQL(insertTheLoaiData);
+
+        String insertSanPhamData = "INSERT INTO sanpham (tentp, theloai_id, soluong, dongia) VALUES " +
+                "('Truyện gì đó', 1, 10, 10000), " +
+                "('Truyện gì đó 01', 1, 10, 10000)";
+        db.execSQL(insertSanPhamData);
+
     }
 
     @Override
@@ -46,6 +57,7 @@ public class myhelper extends SQLiteOpenHelper {
         Log.d("myhelper", "onUpgrade() called");
         db.execSQL("drop table if exists user");
         db.execSQL("drop table if exists sanpham");
+        db.execSQL("DROP TABLE IF EXISTS theloai");
         onCreate(db);
     }
 }
