@@ -22,9 +22,9 @@
         <item android:title="">
             <menu>
                 <item
-                    android:id="@+id/doanhthu"
+                    android:id="@+id/et_dandgxuat"
                     android:icon="@drawable/add"
-                    android:title="Đăbg xuất" />
+                    android:title="Đăng xuất" />
             </menu>
         </item>
     </group>
