@@ -3,11 +3,11 @@ package Model;
 import java.time.LocalDate;
 
 public class PhieuMuon {
-    int mapm,masp;
-    String tentp,ten_ngm;
-    int sdt;
-    LocalDate ngaymuon,ngaytra;
-    Boolean trangthai;
+    public int mapm,masp;
+    public String tentp,ten_ngm;
+    public int sdt;
+    public LocalDate ngaymuon,ngaytra;
+    public Boolean trangthai;
     public PhieuMuon(int mapm, String te_ngm,
                               int sdt, String tentp, int masp,
                               LocalDate ngaymuon,LocalDate ngaytra, Boolean trangthai ){

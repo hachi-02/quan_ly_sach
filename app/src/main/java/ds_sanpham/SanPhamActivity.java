@@ -1,6 +1,7 @@
 package ds_sanpham;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,12 +28,13 @@ import java.util.ArrayList;
 
 import DAO.SanPhamDAO;
 import Model.SanPham;
+import dangnhap.dang_nhap;
+import phieumuon.PhieuMuonActivity;
 
 public class SanPhamActivity extends AppCompatActivity {
     RecyclerView rcv;
     SanPhamDAO spd;
     ArrayList<SanPham> ds;
-    SanPhamAdapter adapter;
     FloatingActionButton fabutton;
     EditText et_ten,et_soluong,et_gia;
     Toolbar toolbar;
@@ -47,6 +49,8 @@ public class SanPhamActivity extends AppCompatActivity {
         rcv = findViewById(R.id.rcv);
         fabutton = findViewById(R.id.floatactionbutton);
         spd = new SanPhamDAO(SanPhamActivity.this);
+
+
         toolbar = findViewById(R.id.toolBar);
         navigationView = findViewById(R.id.navigationView);
         drawerLayout = findViewById(R.id.drawerLayout);
@@ -54,6 +58,24 @@ public class SanPhamActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(null);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
+
+        navigationView.setNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.et_qly_phieumuon) {
+                Intent intent = new Intent(SanPhamActivity.this, PhieuMuonActivity.class);
+                startActivity(intent);
+                return true;
+            }
+            if(id==R.id.et_qly_sach){
+                Toast.makeText(this, "Bạn đang ở trang Quản lý sách.", Toast.LENGTH_SHORT).show();
+            }
+            if (id == R.id.et_dandgxuat) {
+                handleLogout();
+                return true;
+            }
+            drawerLayout.closeDrawer(GravityCompat.START);
+            return true;
+        });
 
 
         dulieu();
@@ -208,5 +230,15 @@ public class SanPhamActivity extends AppCompatActivity {
             return THE_LOAI_IDS[position];
         }
         return -1;
+    }
+
+
+
+
+    //dang xuat
+    private void handleLogout() {
+        Intent intent = new Intent(SanPhamActivity.this, dang_nhap.class);
+        startActivity(intent);
+        finish();
     }
 }
