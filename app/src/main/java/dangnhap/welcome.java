@@ -20,7 +20,7 @@ public class welcome extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.giaodien1);
 
-        CountDownTimer time=new CountDownTimer(3000,1000) {
+        CountDownTimer time=new CountDownTimer(2000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
 

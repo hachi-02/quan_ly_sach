@@ -55,6 +55,7 @@ public class SanPhamActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(null);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
 
+
         dulieu();
         fabutton.setOnClickListener(new View.OnClickListener() {
             @Override

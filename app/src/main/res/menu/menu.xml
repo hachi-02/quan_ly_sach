@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <!--    item gồm id, title, icon-->
-    <item
-        android:id="@+id/item1"
-        android:icon="@drawable/add"
-        android:title="test" />
+                <item
+                    android:id="@+id/item2"
+                    android:icon="@drawable/add"
+                    android:title="Quản lý phiếu mượn" />
+
+                <item
+                    android:id="@+id/item3"
+                    android:icon="@drawable/add"
+                    android:title="Quản lý phiếu mượn" />
+
+                <item
+                    android:id="@+id/item4"
+                    android:icon="@drawable/add"
+                    android:title="Quản lý phiếu mượn" />
+
+
+
+    <group android:checkableBehavior="single">
+        <item android:title="">
+            <menu>
+                <item
+                    android:id="@+id/doanhthu"
+                    android:icon="@drawable/add"
+                    android:title="Đăbg xuất" />
+            </menu>
+        </item>
+    </group>
 </menu>

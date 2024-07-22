@@ -16,7 +16,7 @@ public class PhieuMuonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_phieu_muon);
-
+//        setContentView(R.layout.activity_phieu_muon);
+// :) ao that day
     }
 }
