@@ -1,8 +1,10 @@
 package com.example.duanmau;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -19,6 +21,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.navigation.NavigationView;
 
+import dangnhap.dang_nhap;
 import ds_sanpham.SanPhamActivity;
 import ds_sanpham.SanPhamFragment;
 import phieumuon.PhieuMuonFragment;
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         navigation=(NavigationView)findViewById(R.id.nvView);
 
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Quản lý sách");
 
         ActionBar ab=getSupportActionBar();
         ab.setHomeAsUpIndicator(R.drawable.ic_menu);
@@ -58,13 +62,20 @@ public class MainActivity extends AppCompatActivity {
 
                 if(id==R.id.et_qly_sach){
                     f=new SanPhamFragment();
+                    getSupportActionBar().setTitle("Quản lý sách");
                 }
                 if(id== R.id.et_qly_phieumuon){
                     f=new PhieuMuonFragment();
+                    getSupportActionBar().setTitle("Quản lý phiếu mượn");
                 }
                 else{
                     f=new SanPhamFragment();
                 }
+                if(id==R.id.et_dandgxuat){
+                    Intent i =new Intent(MainActivity.this, dang_nhap.class);
+                    startActivity(i);
+                }
+
                 FragmentManager fagment=getSupportFragmentManager();
                 fagment.beginTransaction()
                         .replace(R.id.flContent,f)
@@ -72,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
                 setTitle(item.getTitle());
                 drawer.closeDrawer(GravityCompat.START);
+
                 return false;
             }
         });
