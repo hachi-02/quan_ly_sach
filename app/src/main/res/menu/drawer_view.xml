@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/PhieuMuon"
+        android:icon="@drawable/ic_home"
+        android:title="Quản lý phiếu mượn"/>
+    <item android:id="@+id/LoaiSach"
+    android:icon="@drawable/ic_library_books"
+    android:title="Quản lý loại sách"/>
+    <item android:id="@+id/Sach"
+        android:icon="@drawable/ic_menu_book"
+        android:title="Quản lý sách"/>
+    <item android:id="@+id/ThanhVien"
+        android:icon="@drawable/ic_people_alt"
+        android:title="Quản lý thành viên"/>
+    <group android:checkableBehavior="single">S
+        <item android:title="Thông kê">
+            <menu>
+                <item android:id="@+id/Top10"
+                    android:icon="@drawable/ic_card_giftcard"
+                    android:title="Top 10 sách mượn nhiều nhất"/>
+                <item android:id="@+id/DoanhThu"
+                    android:icon="@drawable/baseline_attach_money_24"
+                    android:title="Doanh thu"/>
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:title="Người dùng">
+            <menu>
+                <item android:id="@+id/thuthu"
+                    android:icon="@drawable/ic_people_alt"
+                    android:title="Quản lý thủ thư"/>
+                <item android:id="@+id/Doipass"
+                    android:icon="@drawable/ic_vpn_key"
+                    android:title="Đổi mật khẩu"/>
+                <item android:id="@+id/Dangxuat"
+                    android:icon="@drawable/ic_logout"
+                    android:title="Đăng xuất"/>
+            </menu>
+        </item>
+    </group>
+</menu>
